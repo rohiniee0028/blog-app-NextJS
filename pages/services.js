@@ -1,6 +1,6 @@
 import { Box, Heading, SimpleGrid, Text, useToast } from "@chakra-ui/react";
-import Navbar from "../../Components/Navbar";
-import Footer from "../../Components/Footer";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 import Head from "next/head";
 
 const Services = () => {
@@ -63,7 +63,7 @@ const Services = () => {
                     {
                         services.map((el, index) => (
                             <Box key={index + 1}>
-                                <Heading size={"md"} color={"gray.500"} _hover={{ color: "blue.500" }}>{el.title}</Heading>
+                                <Heading size={"md"} color={"gray.500"} _hover={{ color: "#05a0e8" }}>{el.title}</Heading>
                                 <Text mt={"20px"} wordBreak={"break-word"}>{el.body}</Text>
                             </Box>
                         ))

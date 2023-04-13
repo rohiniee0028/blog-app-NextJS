@@ -1,6 +1,6 @@
+import { Mongoconnect } from "../../../database/dbconnect";
+import userModel from "../../../database/models/user.model";
 
-import { Mongoconnect } from "../../../../database/dbconnect";
-import userModel from "../../../../database/models/user.model";
 const bycrypt = require("bcrypt");
 
 export default async function handler(req,res){

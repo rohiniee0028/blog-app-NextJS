@@ -16,7 +16,6 @@ export const HomePage = () => {
                 <VerticalTimeline>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
-                        // contentStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
                         contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
                         date= "Nov 2022"
                         iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}

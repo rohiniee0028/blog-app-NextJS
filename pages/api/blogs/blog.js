@@ -1,5 +1,5 @@
-import { Mongoconnect } from "../../../../database/dbconnect";
-import blogModel from "../../../../database/models/blog.model";
+import { Mongoconnect } from "../../../database/dbconnect";
+import blogModel from "../../../database/models/blog.model";
 
 const bycrypt = require("bcrypt");
 
@@ -15,29 +15,29 @@ export default async function handler(req, res) {
                 !title && title === "" &&
                 !description && description === "") {
     
-                return res.status(200).send({ message: "Invalid Inputs" })
+                return res.send({ message: "Invalid Inputs" })
             }
     
             try {
                 let blog = new blogModel({ author, title, image, description });
                 await blog.save();
-                res.status(201).send({ message: "Blog created successfully", blog: blog });
+                return res.status(201).send({ message: "Blog created successfully"});
     
             } catch (err) {
-                res.send(err.message);
+                console.log(err);
             }
         }
         case "GET" :{
             try{
                let data = await blogModel.find();
-               res.status(200).send(data);
+               return res.status(200).send(data);
             }
             catch(err){
-                res.send(err.message);
+                console.log(err);
             }
         }
         default : {
-            res.send({message : "Error"})
+            return res.send({message : "Error"})
         }
     }
 }

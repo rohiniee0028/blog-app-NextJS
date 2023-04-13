@@ -3,7 +3,7 @@ import { FAILURE_BLOG, REQUEST_BLOG, POST_SUCCESS_BLOG, GET_SUCCESS_BLOG} from "
 const initState = {
     isLoading:false,
     isError:false,
-    blogs : []
+    allblogs : []
 }
 
 export const BlogReducer = (state=initState,action) =>{
@@ -27,7 +27,7 @@ export const BlogReducer = (state=initState,action) =>{
 			...state,
             isLoading : false,
             isError : false,
-            blogs : action.payload
+            allblogs : action.payload
 		};
 	}
     case FAILURE_BLOG:{

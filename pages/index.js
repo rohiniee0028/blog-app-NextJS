@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import { HomePage } from '../../Components/homepage'
-import Footer from '../../Components/Footer';
-import NavOut from '../../Components/NavOut';
+import NavOut from '../Components/NavOut'
+import { HomePage } from '../Components/homepage'
+import Footer from '../Components/Footer'
 
 
 export default function Home() {

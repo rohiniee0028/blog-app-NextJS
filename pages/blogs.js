@@ -1,15 +1,16 @@
 import { Box, Button, Card, CardBody, Flex, Heading, Image, Input, SimpleGrid, Stack, Text, Tooltip, useToast } from "@chakra-ui/react";
-import Navbar from "../../Components/Navbar";
 import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
-import { getAllBlogs, getSearchBlogs } from "@/Redux/BlogReducer/blogAction";
 import { useEffect, useState } from "react";
 import Head from "next/head";
+import Navbar from "../Components/Navbar";
+import { getAllBlogs, getSearchBlogs } from "../Redux/BlogReducer/blogAction";
 
 
 const Blogs = () => {
   let blogs = useSelector((state) => state.blogs);
-  const [text,setText] = useState("");
+  console.log(blogs);
+  const [text, setText] = useState("");
   const toast = useToast();
   const dispatch = useDispatch();
 
@@ -17,19 +18,17 @@ const Blogs = () => {
     dispatch(getAllBlogs())
   }, [text])
 
-  const handleChange = (e)=>{
+  const handleChange = (e) => {
     setText(e.target.value);
   }
 
-
   const handleSearch = (text) => {
-    console.log(text,"text");
-    dispatch(getSearchBlogs(text,toast));
+    dispatch(getSearchBlogs(text, toast));
   }
 
   return (
     <>
-     <Head>
+      <Head>
         <title>Blog App</title>
         <meta name="description" content="Create Your own blog" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -38,11 +37,11 @@ const Blogs = () => {
       <Navbar />
       <br />
       <br />
-      <Flex width={"94%"} m={"auto"} mt={'50px'} justifyContent={"space-between"} flexDirection={{base:"column", sm:"column",md:"row",lg:"row",xl:"row"}} gap={"20px"} alignItems={"center"} >
+      <Flex width={"94%"} m={"auto"} mt={'50px'} justifyContent={"space-between"} flexDirection={{ base: "column", sm: "column", md: "row", lg: "row", xl: "row" }} gap={"20px"} alignItems={"center"} >
         <Text fontSize={"20px"} fontWeight={"bold"}>All Blogs</Text>
         <Flex>
-           <Input type="search" placeholder="search" value={text} onChange={(e)=>handleChange(e)}/>
-           <Button onClick={()=>handleSearch(text)}>Search</Button>
+          <Input type="search" placeholder="search" value={text} onChange={(e) => handleChange(e)} />
+          <Button onClick={() => handleSearch(text)}>Search</Button>
         </Flex>
         <Tooltip label="Create your own blog">
           <Link href="/createBlog">
@@ -52,7 +51,7 @@ const Blogs = () => {
       </Flex>
       <Box width={"80%"} m={"auto"} mt={'50px'}>
         {
-          blogs.blogs?.map((el, index) => (
+          blogs.allblogs?.map((el, index) => (
 
             <Card
               direction={{ base: 'column', sm: 'row' }}
@@ -65,7 +64,7 @@ const Blogs = () => {
                 <CardBody>
                   <Flex justifyContent={"space-between"}>
                     <Heading size='md' wordBreak={"break-word"}>{el.title}</Heading>
-                    <Heading size='md' color={"white"} bg={"blue.500"} rounded={"full"} px={3} py={1.5}>{index + 1}</Heading>
+                    <Heading size='md' color={"white"} bg={"#05a0e8"} rounded={"full"} px={3} py={1.5}>{index + 1}</Heading>
                   </Flex>
                   <Text py='2' wordBreak={"break-word"}>{el.description}</Text>
                   <br />

@@ -6,7 +6,6 @@ import {
   IconButton,
   Button,
   useDisclosure,
-  useColorModeValue,
   Stack,
   Image,
 } from '@chakra-ui/react';
@@ -24,10 +23,10 @@ export default function Navbar() {
     rounded={'xl'}
     fontWeight={'bold'}
     fontSize={'18px'}
-    color= {'blue.500'}
+    color= {'#05a0e8'}
     _hover={{
       textDecoration: 'none',
-      bg: useColorModeValue('blue.400', 'blue.700'),
+      bg: '#05a0e8',
       color: 'white'
     }}
     href={href}>
@@ -69,14 +68,14 @@ export default function Navbar() {
 
   return (
     <>
-      <Box bg={useColorModeValue('white', 'white')} p={2} style={{position:"fixed",zIndex:"100", width:"100%"}} >
+      <Box bg={'white'} p={2} style={{position:"fixed",zIndex:"100", width:"100%"}} >
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             aria-label={'Open Menu'}
             display={{ md: 'none' }}
-            border={'4px solid lightblue'}
+            border={'4px solid #05a0e8'}
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={'center'}>

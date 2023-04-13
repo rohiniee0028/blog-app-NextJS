@@ -1,5 +1,5 @@
 import { Box, Button, FormControl, FormLabel, Heading, Input, InputGroup, InputRightElement, useToast } from "@chakra-ui/react";
-import Navbar from "../../Components/Navbar";
+import Navbar from "../Components/Navbar";
 import Link from "next/link";
 import React, { useState } from "react";
 import axios from "axios";
@@ -124,9 +124,9 @@ const Signup = () => {
                     <Button
                         mt={"20px"}
                         width={"100%"}
-                        bg={"blue.500"}
+                        bg={"#05a0e8"}
                         _hover={{
-                            bg: 'blue.500',
+                            bg: '#05a0e8',
                         }}
                         color={"white"}
                         onClick={(e) => handleSignupSubmit(e)}

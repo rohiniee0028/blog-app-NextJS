@@ -31,8 +31,8 @@ export const loginUser = (e,form,toast,Router)=>(dispatch)=>{
                     isClosable: true,
                     position: "top",
                 });
-                Router.push("/blogs")
-                console.log("RESPONSE-LOGIN",res.data)
+                console.log("User-loggedin",res.data)
+                Router.push("/blogs")        
             }
         }).catch((err)=>{
             toast({

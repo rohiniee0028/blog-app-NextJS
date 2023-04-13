@@ -2,10 +2,10 @@ import { Box, Button, FormControl, FormLabel, Heading, Input, useToast } from "@
 import Link from "next/link";
 import { useState } from "react";
 import { useDispatch} from "react-redux";
-import { loginUser} from "@/Redux/AuthReducer/authAction";
 import { useRouter } from "next/router";
 import Head from "next/head";
-import NavOut from "../../Components/NavOut";
+import { loginUser } from "../Redux/AuthReducer/authAction";
+import NavOut from "../Components/NavOut";
 
 const Login = () => {
     let dispatch = useDispatch();
@@ -47,10 +47,10 @@ const Login = () => {
                     <Button
                         mt={"20px"}
                         width={"100%"}
-                        bg={"blue.500"}
+                        bg={"#05a0e8"}
                         color={"white"}
                         _hover={{
-                            bg: 'blue.500',
+                            bg: '#05a0e8',
                         }}
                         onClick={(e) => handleLoginSubmit(e)}
                     >

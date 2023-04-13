@@ -1,7 +1,7 @@
 import { Box, Heading, Text, useToast } from "@chakra-ui/react";
-import Navbar from "../../Components/Navbar";
-import Footer from "../../Components/Footer";
+import Footer from "../Components/Footer";
 import Head from "next/head";
+import Navbar from "../Components/Navbar";
 
 const About = () => {
 

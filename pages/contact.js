@@ -1,5 +1,5 @@
-import Navbar from "../../Components/Navbar";
-import Footer from "../../Components/Footer";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 import React from 'react';
 import emailjs from '@emailjs/browser'
 import { CgWebsite } from "react-icons/cg";
@@ -19,7 +19,6 @@ import {
     Textarea,
     Tooltip,
     useClipboard,
-    useColorModeValue,
     useToast,
     VStack,
 } from '@chakra-ui/react';
@@ -68,7 +67,7 @@ const Contact = () => {
             <br />
             <br />
             <Flex
-                bg={useColorModeValue('white')}
+                bg={'white'}
                 align="center"
                 justify="center"
             >
@@ -101,8 +100,8 @@ const Contact = () => {
                                             fontSize="3xl"
                                             icon={<MdEmail />}
                                             _hover={{
-                                                bg: 'blue.500',
-                                                color: useColorModeValue('white', 'gray.700'),
+                                                bg: '#05a0e8',
+                                                color: 'white',
                                             }}
                                             onClick={onCopy}
                                             isRound
@@ -118,8 +117,8 @@ const Contact = () => {
                                                 fontSize="3xl"
                                                 icon={<BsGithub />}
                                                 _hover={{
-                                                    bg: 'blue.500',
-                                                    color: useColorModeValue('white', 'gray.700'),
+                                                    bg: '#05a0e8',
+                                                    color: 'white',
                                                 }}
                                                 isRound
                                             />
@@ -134,8 +133,8 @@ const Contact = () => {
                                                 size="lg"
                                                 icon={<CgWebsite size="28px" />}
                                                 _hover={{
-                                                    bg: 'blue.500',
-                                                    color: useColorModeValue('white', 'gray.700'),
+                                                    bg: '#05a0e8',
+                                                    color: 'white',
                                                 }}
                                                 isRound
                                             />
@@ -151,7 +150,7 @@ const Contact = () => {
                                                 icon={<BsLinkedin size="28px" />}
                                                 _hover={{
                                                     bg: 'blue.500',
-                                                    color: useColorModeValue('white', 'gray.700'),
+                                                    color: 'white',
                                                 }}
                                                 isRound
                                             />
@@ -160,10 +159,10 @@ const Contact = () => {
                                 </Stack>
 
                                 <Box
-                                    bg={useColorModeValue('white', 'gray.700')}
+                                    bg={'white'}
                                     borderRadius="lg"
                                     p={8}
-                                    color={useColorModeValue('gray.700', 'whiteAlpha.900')}
+                                    color={'gray.700'}
                                     shadow="base">
                                     <VStack spacing={5} >
                                         <form ref={form} onSubmit={sendEmail}>
@@ -204,12 +203,12 @@ const Contact = () => {
                                             </FormControl>
                                             <br />
                                             <Button type='submit'
-                                                colorScheme="blue"
-                                                bg="blue.500"
+                                                colorScheme="#05a0e8"
+                                                bg="#05a0e8"
                                                 width={"100%"}
                                                 color="white"
                                                 _hover={{
-                                                    bg: 'blue.500',
+                                                    bg: '#05a0e8',
                                                 }}
                                             >
                                                 Send Message

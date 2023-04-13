@@ -49,7 +49,7 @@ export const createUserBlog = (e, blog, toast, Router) => (dispatch) => {
 
 export const getAllBlogs = () => (dispatch) => {
         try {
-            axios.get('/api/blogs/blog')
+            axios.get('api/blogs/blog')
                 .then((res) => {
                     console.log(res.data);
                     dispatch({ type: GET_SUCCESS_BLOG, payload: res.data })

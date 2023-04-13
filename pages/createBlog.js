@@ -1,10 +1,10 @@
 import { Box, Button, FormControl, FormLabel, Heading, Input, Textarea, useToast } from "@chakra-ui/react";
 import { useState } from "react";
-import Navbar from "../../Components/Navbar";
-import { createUserBlog } from "@/Redux/BlogReducer/blogAction";
+import Navbar from "../Components/Navbar";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import { createUserBlog } from "../Redux/BlogReducer/blogAction";
 
 const createBlog = () => {
     const toast = useToast();
@@ -58,9 +58,9 @@ const createBlog = () => {
                         onClick={(e) => handleCreateBlog(e)}
                         width={"100%"}
                         mt={"20px"}
-                        bg={"red.400"}
+                        bg={"#05a0e8"}
                         color={"white"}
-                        _hover={{ bg: "red.400" }}
+                        _hover={{ bg: "#05a0e8" }}
                     >
                         Create
                     </Button>

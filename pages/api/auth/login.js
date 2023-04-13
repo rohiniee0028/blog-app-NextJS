@@ -1,5 +1,5 @@
-import { Mongoconnect } from "../../../../database/dbconnect";
-import userModel from "../../../../database/models/user.model";
+import { Mongoconnect } from "../../../database/dbconnect";
+import userModel from "../../../database/models/user.model";
 
 const jwt = require("jsonwebtoken");
 const bycrypt = require("bcrypt");

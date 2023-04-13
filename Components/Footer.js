@@ -13,9 +13,6 @@ import {
 
 import { FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa';
 
-import ReactAppStoreBadge from 'react-app-store-badge';
-// import PlayStoreBadge from '@/components/PlayStoreBadge';
-
 const ListHeader = ({ children }) => {
   return (
     <Text fontWeight={'500'} fontSize={'lg'} mb={2}>
