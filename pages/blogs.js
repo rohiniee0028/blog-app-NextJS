@@ -14,13 +14,19 @@ const Blogs = () => {
   const toast = useToast();
   const dispatch = useDispatch();
 
+  //---------------------------get all blogs-----------------------------------//
+
   useEffect(() => {
     dispatch(getAllBlogs())
   }, [text])
 
+  //-----------------setting search input-------------------------//
+
   const handleChange = (e) => {
     setText(e.target.value);
   }
+
+  //------------------dispatching Search function----------------------//
 
   const handleSearch = (text) => {
     dispatch(getSearchBlogs(text, toast));

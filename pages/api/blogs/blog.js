@@ -7,37 +7,46 @@ export default async function handler(req, res) {
 
     await Mongoconnect()
 
-    switch(req.method){
-        case "POST" :{
+    switch (req.method) {
+
+        case "POST": {
+
+            //--------------------------post blog----------------------------------//
+
             const { author, title, image, description } = req.body;
 
             if (!author && author === "" &&
                 !title && title === "" &&
                 !description && description === "") {
-    
+
                 return res.send({ message: "Invalid Inputs" })
             }
-    
+
             try {
                 let blog = new blogModel({ author, title, image, description });
                 await blog.save();
-                return res.status(201).send({ message: "Blog created successfully"});
-    
+                return res.status(201).send({ message: "Blog created successfully" });
+
             } catch (err) {
                 console.log(err);
             }
         }
-        case "GET" :{
-            try{
-               let data = await blogModel.find();
-               return res.status(200).send(data);
+
+        case "GET": {
+
+            //-----------------get all blogs-----------------------------------------//
+
+            try {
+                let data = await blogModel.find();
+                return res.status(200).send(data);
             }
-            catch(err){
+            catch (err) {
                 console.log(err);
             }
         }
-        default : {
-            return res.send({message : "Error"})
+
+        default: {
+            return res.send({ message: "Error" })
         }
     }
 }

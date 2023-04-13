@@ -32,6 +32,7 @@ const Contact = () => {
     const form = useRef();
     const { hasCopied, onCopy } = useClipboard('rohiniee0028@gmail.com');
 
+    //----------------------------mailing function----------------------------------//
 
     const sendEmail = (e) => {
         e.preventDefault();

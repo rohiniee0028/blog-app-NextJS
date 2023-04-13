@@ -1,6 +1,8 @@
 import axios from "axios";
 import { GET_SUCCESS_BLOG, POST_SUCCESS_BLOG } from "./blogActionTypes";
 
+//-------------------------create blog-----------------------------------------//
+
 export const createUserBlog = (e, blog, toast, Router) => (dispatch) => {
     e.preventDefault();
     try {
@@ -47,6 +49,8 @@ export const createUserBlog = (e, blog, toast, Router) => (dispatch) => {
 
 }
 
+//----------------------------------get all blogs-------------------------------------//
+
 export const getAllBlogs = () => (dispatch) => {
         try {
             axios.get('api/blogs/blog')
@@ -61,6 +65,7 @@ export const getAllBlogs = () => (dispatch) => {
         }
 }
 
+//----------------------get searched blogs-----------------------------------//
 
 export const getSearchBlogs = (text,toast) => (dispatch) =>{
     try{

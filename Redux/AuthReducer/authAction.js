@@ -1,6 +1,8 @@
 import axios from "axios";
 import { SUCCESS_LOGIN, USER_LOGOUT } from "./authActionTypes";
 
+//----------------------------login user--------------------------------------//
+
 export const loginUser = (e,form,toast,Router)=>(dispatch)=>{
     e.preventDefault();
     try{
@@ -51,6 +53,8 @@ export const loginUser = (e,form,toast,Router)=>(dispatch)=>{
     }
     
 }
+
+//------------------------logout user---------------------------------//
 
 export const logoutUser = () => async(dispatch)=>{
     try{

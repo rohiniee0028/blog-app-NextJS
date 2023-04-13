@@ -17,9 +17,13 @@ const Login = () => {
         password: "",
     });
 
+    //-------------------setting values on user input----------------------------------//
+
     let handleChange = ({ target }) => {
         setForm({ ...form, [target.name]: target.value });
     };
+
+    // ------------------------dispatching loginUser function------------------------------------//
 
     let handleLoginSubmit = (e) => {
         dispatch(loginUser(e, form, toast,Router));

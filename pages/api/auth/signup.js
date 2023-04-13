@@ -3,6 +3,8 @@ import userModel from "../../../database/models/user.model";
 
 const bycrypt = require("bcrypt");
 
+//------------------------------signup--------------------------------------//
+
 export default async function handler(req,res){
    await Mongoconnect();
 

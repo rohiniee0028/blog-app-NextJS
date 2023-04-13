@@ -6,6 +6,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
+
 const Signup = () => {
     const [show, setShow] = useState(false)
     const toast = useToast();
@@ -21,9 +22,13 @@ const Signup = () => {
         address: "",
     });
 
+    //-----------------------setting values on user input-----------------------------//
+
     let handleSignupForm = ({ target }) => {
         setForm({ ...form, [target.name]: target.value });
     };
+
+    // ---------------------------signup user function---------------------------------//
 
     let handleSignupSubmit = (e) => {
         e.preventDefault();
@@ -32,8 +37,8 @@ const Signup = () => {
                 ...form,
             })
                 .then((res) => {
-                    console.log("response", res);
-                    if (res?.data?.message === "Invalid Inputs") {
+
+                    if (res.data.message === "Invalid Inputs") {
                         toast({
                             title: "Signup failed",
                             description: "Invalid Inputs, Please enter correct inputs",
@@ -43,7 +48,7 @@ const Signup = () => {
                             position: "top",
                         });
                     }
-                    else if (res?.data?.message === "User registered successfully") {
+                    else if (res.data.message === "User registered successfully") {
                         toast({
                             title: "Signup success",
                             description: "User successfully registered",
@@ -61,7 +66,7 @@ const Signup = () => {
                         });
                         Router.push("/login");
                     }
-                    else if (res?.data?.message === "User already registered") {
+                    else if (res.data.message === "User already registered") {
                         toast({
                             title: "Signup failed",
                             description: "User already Exist",

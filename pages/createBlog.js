@@ -18,9 +18,14 @@ const createBlog = () => {
         description: ""
     })
 
+    //---------------------setting user inputs----------------------------------//
+
     const handleChange = (e) => {
         setBlog({ ...blog, [e.target.name]: e.target.value });
     }
+
+
+    // ----------------------------dispatching createUserBlog function--------------------------//
 
     const handleCreateBlog = (e) => {
         dispatch(createUserBlog(e, blog, toast, Router));
